@@ -1,5 +1,8 @@
 package com.xworkz.country.configuration;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -7,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import com.xworkz.country.beans.Education;
 import com.xworkz.country.beans.Name;
 import com.xworkz.country.beans.Salary;
+import com.xworkz.country.beans.UnionTerriotories;
 import com.xworkz.country.enums.NameType;
 
 @Configuration
@@ -60,9 +64,12 @@ public class SpringConfig {
 	}
 	
 	@Bean 
-	public Name unionTerritoryNames() {
-		Name name = new Name("Delhi", "Andaman and Nicobar", "Chandigarh");
-		return name;
+	public UnionTerriotories[] unionTerritoryNames() {
+		UnionTerriotories terriotories = new UnionTerriotories("Delhi", 125360, "Nanu", 12589305);
+		UnionTerriotories terriotories1 = new UnionTerriotories("Lakshadweep", 65489, "Neenu", 8956236);
+		UnionTerriotories[] union = {terriotories,terriotories1};
+		return union;
+		
 	}
 	
 	@Bean 
